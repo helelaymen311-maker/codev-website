@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CODEV — Premium software development company specializing in web, mobile, full-stack, and enterprise software solutions. We build the future.">
-  <meta name="keywords" content="CODEV, software development, web development, mobile apps, full-stack, enterprise software">
-  <title>CODEV — We Build The Future</title>
+  <meta name="description"
+    content="HOUSE OF HYPE — Premium software development and creative digital agency. We build the future.">
+  <meta name="keywords"
+    content="HOUSE OF HYPE, HOH, software development, web development, mobile apps, full-stack, enterprise software">
+  <title>HOUSE OF HYPE — We Build The Future</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Arabic Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- Scroll Progress Bar -->
@@ -15,6 +21,7 @@
 
   <!-- Cursor Glow -->
   <div class="cursor-glow" id="cursorGlow"></div>
+
 
   <!-- Hero Background Video -->
   <video class="hero-video-bg" autoplay muted loop playsinline id="heroVideo">
@@ -28,20 +35,51 @@
   <nav class="navbar" id="navbar">
     <div class="container">
       <a href="#hero" class="nav-logo">
-        <img src="images/codev.jpeg" alt="CODEV Logo" class="nav-logo-img">
-        <span>CODEV</span>
+        <img src="images/hoh_logo.jpg" alt="HOUSE OF HYPE Logo" class="nav-logo-img">
+        <span>HOUSE OF HYPE</span>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#hero" class="active">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+        <li><a href="#hero" class="active" data-i18n="nav_home">Home</a></li>
+        <li><a href="#services" data-i18n="nav_services">Services</a></li>
+        <li><a href="#all-in-one" data-i18n="nav_all_in_one">360° Solution</a></li>
+        <li><a href="#projects" data-i18n="nav_websites">Websites</a></li>
+        <li><a href="#applications" data-i18n="nav_applications">Applications</a></li>
+        <li><a href="#contact" class="nav-cta" data-i18n="nav_contact">Contact Us</a></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-right-controls">
+        <!-- Language Switcher -->
+        <div class="site-lang-switcher" id="site-lang-switcher">
+          <button class="site-lang-btn" id="site-lang-btn">
+            <span class="site-lang-flag" id="site-lang-flag">🇬🇧</span>
+            <span class="site-lang-code" id="site-lang-code">EN</span>
+            <span class="site-lang-arrow">▾</span>
+          </button>
+          <div class="site-lang-dropdown" id="site-lang-dropdown">
+            <div class="site-lang-option" data-lang="en">
+              <span class="site-lang-flag">🇬🇧</span>
+              <span>English</span>
+            </div>
+            <div class="site-lang-option" data-lang="fr">
+              <span class="site-lang-flag">🇫🇷</span>
+              <span>Français</span>
+            </div>
+            <div class="site-lang-option" data-lang="ar">
+              <span class="site-lang-flag">🇩🇿</span>
+              <span>العربية</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="site-theme-toggle" id="site-theme-toggle" aria-label="Toggle dark/light mode">
+          <span class="theme-icon-moon">🌙</span>
+          <span class="theme-icon-sun">☀️</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -58,51 +96,61 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="dot"></span>
-          Premium Development Studio
+          <span data-i18n="hero_badge">Premium Development Studio</span>
         </div>
         <h1 class="hero-title">
-          <span class="line">We Build</span>
-          <span class="line gradient-text">The Future.</span>
+          <span class="line" data-i18n="hero_title_1">We Build</span>
+          <span class="line gradient-text" data-i18n="hero_title_2">The Future.</span>
         </h1>
-        <p class="hero-description">
-          CODEV is a premium digital agency delivering world-class 
-          web applications, custom software, stunning designs, logos, 
+        <p class="hero-description" data-i18n="hero_desc">
+          HOUSE OF HYPE is a premium digital agency delivering world-class
+          web applications, custom software, stunning designs, logos,
           and powerful digital marketing solutions.
         </p>
         <div class="hero-buttons">
           <a href="#projects" class="btn-primary">
-            View Our Work
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span data-i18n="btn_view_work">View Our Work</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </a>
           <a href="#contact" class="btn-secondary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            Get In Touch
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+            </svg>
+            <span data-i18n="btn_get_in_touch">Get In Touch</span>
           </a>
         </div>
         <div class="hero-stats">
           <div class="stat">
             <div class="stat-number">50<span class="accent">+</span></div>
-            <div class="stat-label">Projects Delivered</div>
+            <div class="stat-label" data-i18n="stat_projects">Projects Delivered</div>
           </div>
           <div class="stat">
             <div class="stat-number">30<span class="accent">+</span></div>
-            <div class="stat-label">Happy Clients</div>
+            <div class="stat-label" data-i18n="stat_clients">Happy Clients</div>
           </div>
           <div class="stat">
             <div class="stat-number">5<span class="accent">+</span></div>
-            <div class="stat-label">Years Experience</div>
+            <div class="stat-label" data-i18n="stat_years">Years Experience</div>
           </div>
         </div>
       </div>
       <div class="hero-visual">
         <div class="hero-image-wrapper">
           <div class="hero-image-glow"></div>
-          <img src="images/CODEV_digital_services_dashboard…_202609072008.jpeg" alt="CODEV Services" class="hero-main-image">
+          <img src="images/hoh.jpeg?v=2" alt="HOUSE OF HYPE Services"
+            class="hero-main-image">
           <div class="hero-image-badge dynamic-lightning-badge">
-            <svg class="lightning-icon premium-star" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="var(--gold-light)">
-              <path d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z"/>
-            </svg> 
-            FULL-SERVICE DIGITAL AGENCY
+            <svg class="lightning-icon premium-star" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+              viewBox="0 0 24 24" fill="var(--gold-light)">
+              <path
+                d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z" />
+            </svg>
+            <span data-i18n="hero_image_badge">FULL-SERVICE DIGITAL AGENCY</span>
           </div>
         </div>
       </div>
@@ -115,17 +163,17 @@
     <div class="marquee-container">
       <div class="marquee-content">
         <!-- Group 1 -->
-        <span class="color-1">I BUILD FRONT-END</span> <span class="marquee-star">✧</span>
-        <span class="color-2">I BUILD BACK-END</span> <span class="marquee-star">✧</span>
-        <span class="color-3">I TEST EVERYTHING</span> <span class="marquee-star">✧</span>
-        <span class="color-4">WEB APPLICATIONS</span> <span class="marquee-star">✧</span>
-        <span class="color-5">MOBILE APPS</span> <span class="marquee-star">✧</span>
+        <span class="color-1" data-i18n="marquee_1">I BUILD FRONT-END</span> <span class="marquee-star">✧</span>
+        <span class="color-2" data-i18n="marquee_2">I BUILD BACK-END</span> <span class="marquee-star">✧</span>
+        <span class="color-3" data-i18n="marquee_3">CUSTOM COMPANY LOGOS</span> <span class="marquee-star">✧</span>
+        <span class="color-4" data-i18n="marquee_4">360° BUSINESS ARCHITECTURE</span> <span class="marquee-star">✧</span>
+        <span class="color-5" data-i18n="marquee_5">YOU INFORM US — WE DO EVERYTHING</span> <span class="marquee-star">✧</span>
         <!-- Group 2 (Duplicate for seamless loop) -->
-        <span class="color-1">I BUILD FRONT-END</span> <span class="marquee-star">✧</span>
-        <span class="color-2">I BUILD BACK-END</span> <span class="marquee-star">✧</span>
-        <span class="color-3">I TEST EVERYTHING</span> <span class="marquee-star">✧</span>
-        <span class="color-4">WEB APPLICATIONS</span> <span class="marquee-star">✧</span>
-        <span class="color-5">MOBILE APPS</span> <span class="marquee-star">✧</span>
+        <span class="color-1" data-i18n="marquee_1">I BUILD FRONT-END</span> <span class="marquee-star">✧</span>
+        <span class="color-2" data-i18n="marquee_2">I BUILD BACK-END</span> <span class="marquee-star">✧</span>
+        <span class="color-3" data-i18n="marquee_3">CUSTOM COMPANY LOGOS</span> <span class="marquee-star">✧</span>
+        <span class="color-4" data-i18n="marquee_4">360° BUSINESS ARCHITECTURE</span> <span class="marquee-star">✧</span>
+        <span class="color-5" data-i18n="marquee_5">YOU INFORM US — WE DO EVERYTHING</span> <span class="marquee-star">✧</span>
       </div>
     </div>
   </div>
@@ -135,69 +183,597 @@
   <section class="services" id="services">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label">What We Do</div>
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-subtitle">
-          From concept to deployment, we deliver end-to-end development solutions 
+        <div class="section-label" data-i18n="services_label">What We Do</div>
+        <h2 class="section-title" data-i18n="services_title">Our Services</h2>
+        <p class="section-subtitle" data-i18n="services_subtitle">
+          From concept to deployment, we deliver end-to-end development solutions
           with cutting-edge technology and premium quality.
         </p>
       </div>
+
+      <!-- ============ FLAGSHIP IPHONE 18 PRO MAX INTERACTIVE SHOWCASE ============ -->
+      <div class="iphone-flagship-wrapper reveal">
+        <div class="iphone-flagship-header">
+          <div class="iphone-flagship-badge">
+            <span>📱</span> <span data-i18n="iphone_badge">IPHONE 18 PRO MAX • 360° LIVE INTERACTIVE SHOWCASE</span>
+          </div>
+          <h3 class="iphone-flagship-title" data-i18n="iphone_title">All Services & Digital Systems Live in iPhone 18 Pro Max</h3>
+          <p class="iphone-flagship-subtitle" data-i18n="iphone_subtitle">
+            Experience our websites, native apps, luxury company logos, and high-ROI ad engines rendered in pixel-perfect Retina OLED clarity.
+          </p>
+        </div>
+
+        <!-- Interactive Switcher Controls -->
+        <div class="iphone-nav-tabs" id="iphoneNavTabs">
+          <button type="button" class="iphone-tab-btn active" data-screen="websites">
+            <span class="tab-icon">🌐</span>
+            <span class="tab-text" data-i18n="tab_websites">Websites & E-Commerce</span>
+          </button>
+          <button type="button" class="iphone-tab-btn" data-screen="apps">
+            <span class="tab-icon">📱</span>
+            <span class="tab-text" data-i18n="tab_apps">Mobile & Web Apps</span>
+          </button>
+          <button type="button" class="iphone-tab-btn" data-screen="branding">
+            <span class="tab-icon">💎</span>
+            <span class="tab-text" data-i18n="tab_branding">Logos & Brand Identity</span>
+          </button>
+          <button type="button" class="iphone-tab-btn" data-screen="ads">
+            <span class="tab-icon">📈</span>
+            <span class="tab-text" data-i18n="tab_ads">Google & Meta Ads</span>
+          </button>
+          <button type="button" class="iphone-tab-btn" data-screen="turnkey">
+            <span class="tab-icon">👑</span>
+            <span class="tab-text" data-i18n="tab_turnkey">360° All-In-One Solution</span>
+          </button>
+        </div>
+
+        <!-- The Physical iPhone 18 Pro Max Device & Specs Showcase -->
+        <div class="iphone-stage-grid">
+          <!-- Left: Physical Titanium iPhone 18 Pro Max Mockup -->
+          <div class="iphone-device-column">
+            <div class="iphone-device-chassis" id="iphoneDevice">
+              <!-- Physical Titanium Edge Buttons & Engraving -->
+              <div class="iphone-btn-volume-up"></div>
+              <div class="iphone-btn-volume-down"></div>
+              <div class="iphone-btn-action"></div>
+              <div class="iphone-btn-power"></div>
+              <div class="iphone-band-engraving">TITANIUM 18 PRO MAX • HOUSE OF HYPE</div>
+
+              <!-- OLED Screen Bezel -->
+              <div class="iphone-screen-bezel">
+                <!-- Dynamic Island 2.0 -->
+                <div class="dynamic-island">
+                  <div class="island-camera"></div>
+                  <div class="island-speaker"></div>
+                  <div class="island-pulse-glow">
+                    <span class="island-live-dot"></span>
+                    <span class="island-live-text" id="islandText">HYPE ENGINE • LIVE</span>
+                  </div>
+                </div>
+
+                <!-- iOS Status Bar -->
+                <div class="ios-status-bar">
+                  <span class="status-time">9:41</span>
+                  <div class="status-icons">
+                    <span class="status-signal">5G</span>
+                    <span class="status-wifi">􀙇</span>
+                    <div class="status-battery">
+                      <div class="battery-fill"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Glass Glare Reflection -->
+                <div class="screen-glare"></div>
+
+                <!-- Dynamic Screen Viewport Container -->
+                <div class="iphone-screen-viewport" id="iphoneScreenViewport">
+                  <!-- SCREEN 1: WEBSITES (Default) -->
+                  <div class="screen-view active" id="viewWebsites">
+                    <div class="screen-safari-bar">
+                      <span class="safari-lock">🔒</span>
+                      <span class="safari-url">houseofhype.com/websites</span>
+                      <span class="safari-reload">↻</span>
+                    </div>
+                    <div class="screen-app-body">
+                      <div class="screen-hero-preview">
+                        <img src="images/project_wheelworld.png" alt="Wheel World Website Preview" class="screen-main-img">
+                        <div class="screen-overlay-tag">
+                          <span>Verified Client</span>
+                          <strong>wheelworld.dz</strong>
+                        </div>
+                      </div>
+                      <div class="screen-mini-cards">
+                        <div class="screen-mini-card">
+                          <img src="images/project_glowyoriginal.png" alt="Glowy Original E-Commerce">
+                          <div class="screen-mini-text">
+                            <h4>Glowy Original</h4>
+                            <span>E-Commerce Store</span>
+                          </div>
+                        </div>
+                        <div class="screen-mini-card">
+                          <img src="images/project_dnlumiere.png" alt="D&N Lumiere Luxury Store">
+                          <div class="screen-mini-text">
+                            <h4>D&N Lumiere</h4>
+                            <span>Haute Couture</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- SCREEN 2: MOBILE APPS -->
+                  <div class="screen-view" id="viewApps">
+                    <div class="screen-app-header">
+                      <div class="app-brand-pill">
+                        <span class="app-dot"></span>
+                        <span>Wheel World Mobile OS</span>
+                      </div>
+                      <span class="app-rating">5.0 ★★★★★</span>
+                    </div>
+                    <div class="screen-app-body">
+                      <div class="screen-hero-preview">
+                        <img src="images/project_wheelworld_app.jpg" alt="Wheel World Mobile App" class="screen-main-img">
+                        <div class="screen-overlay-tag">
+                          <span>Native iOS & Android</span>
+                          <strong>Real-Time Analytics</strong>
+                        </div>
+                      </div>
+                      <div class="screen-stats-strip">
+                        <div class="screen-stat-box">
+                          <small>Active Users</small>
+                          <strong>24.8K</strong>
+                        </div>
+                        <div class="screen-stat-box">
+                          <small>Performance</small>
+                          <strong style="color: #34d399;">60 FPS</strong>
+                        </div>
+                        <div class="screen-stat-box">
+                          <small>Cloud Sync</small>
+                          <strong style="color: #60a5fa;">0.02s</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- SCREEN 3: LOGOS & BRANDING -->
+                  <div class="screen-view" id="viewBranding">
+                    <div class="screen-brand-header">
+                      <span class="brand-monogram-badge">👑 HOUSE OF HYPE</span>
+                      <span class="vector-badge">VECTOR MASTER</span>
+                    </div>
+                    <div class="screen-app-body">
+                      <div class="screen-hero-preview">
+                        <img src="images/svc_branding.jpg" alt="Brand Identity & Custom Logos in iPhone 18 Pro Max" class="screen-main-img">
+                        <div class="screen-overlay-tag">
+                          <span>Custom Monogram Suite</span>
+                          <strong>Gold Foil Vector Files</strong>
+                        </div>
+                      </div>
+                      <div class="screen-color-palette">
+                        <span class="color-dot" style="background:#d4af37;" title="Royal Gold"></span>
+                        <span class="color-dot" style="background:#050a18;" title="Obsidian Navy"></span>
+                        <span class="color-dot" style="background:#ffffff;" title="Pure Diamond"></span>
+                        <span class="color-dot" style="background:#1e3a8a;" title="Electric Blue"></span>
+                        <span class="palette-label">Vector Standards: SVG • AI • PDF</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- SCREEN 4: ADS & MARKETING -->
+                  <div class="screen-view" id="viewAds">
+                    <div class="screen-ads-header">
+                      <div class="ads-pill">
+                        <span class="pulse-indicator"></span>
+                        <span>Google & Meta Ad Engine</span>
+                      </div>
+                      <span class="ads-roi-badge">+480% ROI</span>
+                    </div>
+                    <div class="screen-app-body">
+                      <div class="screen-hero-preview">
+                        <img src="images/svc_marketing.jpg" alt="Google Ads & Meta Ads Live Performance" class="screen-main-img">
+                        <div class="screen-overlay-tag">
+                          <span>Quarterly Revenue</span>
+                          <strong>$1,890,000 Generated</strong>
+                        </div>
+                      </div>
+                      <div class="screen-stats-strip">
+                        <div class="screen-stat-box">
+                          <small>Ad Spend</small>
+                          <strong>$325K</strong>
+                        </div>
+                        <div class="screen-stat-box">
+                          <small>ROAS</small>
+                          <strong style="color: #d4af37;">5.81x</strong>
+                        </div>
+                        <div class="screen-stat-box">
+                          <small>Conversions</small>
+                          <strong style="color: #34d399;">+315%</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- SCREEN 5: 360° ALL-IN-ONE -->
+                  <div class="screen-view" id="viewTurnkey">
+                    <div class="screen-turnkey-header">
+                      <span class="turnkey-mini-badge">👑 360° FULL CARE</span>
+                      <span class="turnkey-status">ALL SYSTEMS ONLINE</span>
+                    </div>
+                    <div class="screen-app-body">
+                      <div class="screen-hero-preview">
+                        <img src="images/svc_development.jpg" alt="Turnkey Complete Business Control" class="screen-main-img">
+                        <div class="screen-overlay-tag">
+                          <span>Zero Hassle For You</span>
+                          <strong>You Inform Us — We Do Everything</strong>
+                        </div>
+                      </div>
+                      <div class="screen-checklist-card">
+                        <div class="screen-check-line"><span>✓</span> <strong>Company Logo & Guidelines</strong></div>
+                        <div class="screen-check-line"><span>✓</span> <strong>Custom Website & E-Shop</strong></div>
+                        <div class="screen-check-line"><span>✓</span> <strong>iOS & Android App</strong></div>
+                        <div class="screen-check-line"><span>✓</span> <strong>Google & Meta Ads Scaling</strong></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- iOS Home Indicator Bar -->
+                <div class="ios-home-bar"></div>
+              </div>
+            </div>
+            <div class="iphone-shadow-ambient"></div>
+          </div>
+
+          <!-- Right: Interactive Specs & Quick Switcher Card -->
+          <div class="iphone-detail-panel" id="iphoneDetailPanel">
+            <div class="detail-badge" id="iphoneDetailBadge">ULTRA-FAST WEB ARCHITECTURE</div>
+            <h4 class="detail-heading" id="iphoneDetailHeading">Web Platforms & E-Commerce</h4>
+            <p class="detail-desc" id="iphoneDetailDesc">
+              Custom-engineered, high-conversion web platforms built with luxury aesthetics, sub-second load times, and seamless mobile responsiveness across every device.
+            </p>
+
+            <div class="detail-metrics-grid" id="iphoneDetailMetrics">
+              <div class="metric-item">
+                <span class="metric-val" id="metricVal1">0.4s</span>
+                <span class="metric-lbl" id="metricLbl1">Page Load Speed</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val" id="metricVal2">100/100</span>
+                <span class="metric-lbl" id="metricLbl2">Google SEO Score</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val" id="metricVal3">+35%</span>
+                <span class="metric-lbl" id="metricLbl3">Conversion Rate</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val" id="metricVal4">99.9%</span>
+                <span class="metric-lbl" id="metricLbl4">Uptime Guarantee</span>
+              </div>
+            </div>
+
+            <div class="detail-features-checklist" id="iphoneDetailFeatures">
+              <div class="feature-line">
+                <span class="feature-dot">✦</span>
+                <span id="featLine1">Ultra-responsive layouts engineered for desktop, tablet, and mobile</span>
+              </div>
+              <div class="feature-line">
+                <span class="feature-dot">✦</span>
+                <span id="featLine2">Secure checkout & automated payment gateway integrations</span>
+              </div>
+              <div class="feature-line">
+                <span class="feature-dot">✦</span>
+                <span id="featLine3">High-authority visual presence with custom animations & luxury dark mode</span>
+              </div>
+            </div>
+
+            <div class="detail-actions">
+              <a href="#contact" class="btn-primary" id="iphoneDetailCta">
+                <span data-i18n="iphone_cta">Order This Service</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+              <div class="iphone-pro-badge">
+                <span class="pro-pulse"></span>
+                <span>RETINA OLED XDR • 120HZ PROMOTION</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ SERVICES CARDS GRID WITH PROFESSIONAL PICTURES ============ -->
+      <!-- ============ SERVICES CARDS GRID WITH REAL PICTURES & OFFICIAL LOGOS ============ -->
       <div class="services-grid">
-        <!-- Service 1 -->
+        <!-- Service 1: Development -->
         <div class="service-card reveal reveal-delay-1" data-tilt>
+          <div class="service-card-media">
+            <img src="images/project_wheelworld.png" alt="Real Web Platforms & Full-Stack Development" loading="lazy">
+            <span class="service-media-badge">Full-Stack Web & APIs</span>
+          </div>
           <span class="service-number">01</span>
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div>
-          <h3>Development</h3>
-          <p>Web applications, custom software, and full-stack solutions built with cutting-edge technology and best practices.</p>
+          <div class="service-icon" title="Full-Stack Web Development">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+              <defs>
+                <linearGradient id="realDevGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#38bdf8"/>
+                  <stop offset="100%" stop-color="#2563eb"/>
+                </linearGradient>
+              </defs>
+              <rect x="2" y="3" width="20" height="14" rx="3" stroke="url(#realDevGrad)" stroke-width="2"/>
+              <path d="M8 21h8M12 17v4" stroke="url(#realDevGrad)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M7 8l3 2.5L7 13M13 13h4" stroke="#fde047" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 data-i18n="svc_dev_title">Development</h3>
+          <p data-i18n="svc_dev_desc">Web applications, custom software, and full-stack solutions built with cutting-edge technology and best practices.</p>
         </div>
-        <!-- Service 2 -->
+
+        <!-- Service 2: Design -->
         <div class="service-card reveal reveal-delay-2" data-tilt>
+          <div class="service-card-media">
+            <img src="images/project_dashboard.jpg" alt="UI/UX Design Systems and Dashboards" loading="lazy">
+            <span class="service-media-badge">Bespoke UI/UX Design</span>
+          </div>
           <span class="service-number">02</span>
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></div>
-          <h3>Design</h3>
-          <p>Stunning UI/UX designs that captivate users and deliver exceptional digital experiences across all platforms.</p>
+          <div class="service-icon" title="UI/UX Luxury Design">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+              <defs>
+                <linearGradient id="realDesignGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ec4899"/>
+                  <stop offset="50%" stop-color="#a855f7"/>
+                  <stop offset="100%" stop-color="#6366f1"/>
+                </linearGradient>
+              </defs>
+              <path fill="url(#realDesignGrad)" d="M12 2l8 6-8 14L4 8l8-6zm0 3.2L6.8 8.4 12 17.5l5.2-9.1L12 5.2z"/>
+            </svg>
+          </div>
+          <h3 data-i18n="svc_design_title">Design</h3>
+          <p data-i18n="svc_design_desc">Stunning UI/UX designs that captivate users and deliver exceptional digital experiences across all platforms.</p>
         </div>
-        <!-- Service 3 -->
+
+        <!-- Service 3: Logos & Branding -->
         <div class="service-card reveal reveal-delay-3" data-tilt>
+          <div class="service-card-media">
+            <img src="images/branding_showcase.jpg" alt="Real Luxury Company Logo & Brand Identity Flatlay" loading="lazy">
+            <span class="service-media-badge">Royal Brand Identity</span>
+          </div>
           <span class="service-number">03</span>
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
-          <h3>Logos & Branding</h3>
-          <p>Premium logo design and complete brand identity systems that make your business stand out from the competition.</p>
+          <div class="service-icon" title="Company Logos & Monograms">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+              <defs>
+                <linearGradient id="realCrownGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fef08a"/>
+                  <stop offset="50%" stop-color="#d4af37"/>
+                  <stop offset="100%" stop-color="#b45309"/>
+                </linearGradient>
+              </defs>
+              <path fill="url(#realCrownGrad)" d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+            </svg>
+          </div>
+          <h3 data-i18n="svc_branding_title">Logos & Branding</h3>
+          <p data-i18n="svc_branding_desc">Premium logo design and complete brand identity systems that make your business stand out from the competition.</p>
         </div>
-        <!-- Service 4 -->
+
+        <!-- Service 4: Marketing -->
         <div class="service-card reveal reveal-delay-1" data-tilt>
+          <div class="service-card-media">
+            <img src="images/project_dashboard.jpg" alt="High-ROI Digital Marketing & Growth Strategy" loading="lazy">
+            <span class="service-media-badge">+480% Growth Engine</span>
+          </div>
           <span class="service-number">04</span>
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></div>
-          <h3>Marketing</h3>
-          <p>Strategic digital marketing campaigns that boost visibility, drive traffic, and grow your business online.</p>
+          <div class="service-icon" title="Digital Marketing Growth">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+              <defs>
+                <linearGradient id="realMktGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fb923c"/>
+                  <stop offset="100%" stop-color="#ea580c"/>
+                </linearGradient>
+              </defs>
+              <path fill="url(#realMktGrad)" d="M13.5 2.5c2.5 1.5 6 6 6 8.5 0 2-.8 3.8-2.2 5.2l-3.3-3.3-2.5 2.5 3.3 3.3c-1.4 1.4-3.2 2.2-5.2 2.2-2.5 0-7-3.5-8.5-6 1.8-.2 3.7-.8 5.2-2.3L15.8 3c-1.5.5-2.1.8-2.3-.5z"/>
+              <circle cx="14.5" cy="9.5" r="2" fill="#fff"/>
+            </svg>
+          </div>
+          <h3 data-i18n="svc_marketing_title">Marketing</h3>
+          <p data-i18n="svc_marketing_desc">Strategic digital marketing campaigns that boost visibility, drive traffic, and grow your business online.</p>
         </div>
-        <!-- Service 5 -->
+
+        <!-- Service 5: Google Ads (REAL OFFICIAL GOOGLE ADS LOGO) -->
         <div class="service-card reveal reveal-delay-2" data-tilt>
+          <div class="service-card-media">
+            <img src="images/project_wheelworld.png" alt="Google Ads Performance & Certified Search Campaigns" loading="lazy">
+            <span class="service-media-badge">Google Ads Partner</span>
+          </div>
           <span class="service-number">05</span>
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
-          <h3>Google Ads</h3>
-          <p>High-performance Google Ads campaigns with expert targeting, optimization, and maximum ROI for your budget.</p>
+          <div class="service-icon" title="Official Google Ads Partner">
+            <svg width="34" height="34" viewBox="0 0 48 48">
+              <path fill="#FBBC05" d="M12.2 4.4c-4.8 2.8-6.4 8.9-3.6 13.7l11.4 19.7c2.8 4.8 8.9 6.4 13.7 3.6 4.8-2.8 6.4-8.9 3.6-13.7L25.9 8c-2.8-4.8-8.9-6.4-13.7-3.6z"/>
+              <path fill="#4285F4" d="M42.4 34.1c2.8-4.8 1.2-10.9-3.6-13.7-4.8-2.8-10.9-1.2-13.7 3.6-2.8 4.8-1.2 10.9 3.6 13.7 4.8 2.8 10.9 1.2 13.7-3.6z"/>
+              <circle fill="#34A853" cx="15.8" cy="37.7" r="5.7"/>
+            </svg>
+          </div>
+          <h3 data-i18n="svc_google_title">Google Ads</h3>
+          <p data-i18n="svc_google_desc">High-performance Google Ads campaigns with expert targeting, optimization, and maximum ROI for your budget.</p>
         </div>
-        <!-- Service 6 -->
+
+        <!-- Service 6: Meta Ads (REAL OFFICIAL META ADS LOGO) -->
         <div class="service-card reveal reveal-delay-3" data-tilt>
+          <div class="service-card-media">
+            <img src="images/project_wheelworld_app.jpg" alt="Meta Ads & Instagram High Conversion Campaigns" loading="lazy">
+            <span class="service-media-badge">Meta & Social Scale</span>
+          </div>
           <span class="service-number">06</span>
-          <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></div>
-          <h3>Meta Ads</h3>
-          <p>Powerful Facebook and Instagram advertising strategies that reach your ideal audience and drive conversions.</p>
+          <div class="service-icon" title="Official Meta Ads & Instagram">
+            <svg width="34" height="34" viewBox="0 0 100 100">
+              <defs>
+                <linearGradient id="realMetaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#0064E0"/>
+                  <stop offset="50%" stop-color="#0081FB"/>
+                  <stop offset="100%" stop-color="#00C6FF"/>
+                </linearGradient>
+              </defs>
+              <path fill="url(#realMetaGrad)" d="M50 43.5C44.8 34.6 37.9 30 29.5 30 16.5 30 7 40.5 7 53.5 7 66.5 16.5 77 29.5 77c8.4 0 15.3-4.6 20.5-13.5 5.2 8.9 12.1 13.5 20.5 13.5 13 0 22.5-10.5 22.5-23.5S83 30 70.5 30c-8.4 0-15.3 4.6-20.5 13.5zm-20.5 24C21.8 67.5 16 61.3 16 53.5s5.8-14 13.5-14c5.8 0 10.5 3.3 14.2 9.5-3.7 6.2-8.4 9.5-14.2 9.5zm41 0c-5.8 0-10.5-3.3-14.2-9.5 3.7-6.2 8.4-9.5 14.2-9.5 7.7 0 13.5 6.2 13.5 14s-5.8 14-13.5 14z"/>
+            </svg>
+          </div>
+          <h3 data-i18n="svc_meta_title">Meta Ads</h3>
+          <p data-i18n="svc_meta_desc">Powerful Facebook and Instagram advertising strategies that reach your ideal audience and drive conversions.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ PROJECTS SECTION ============ -->
+  <!-- ============ 360° ALL-IN-ONE BUSINESS SOLUTION ============ -->
+  <section class="turnkey-section" id="all-in-one">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="turnkey-badge-glow">
+          <span>👑</span> <span data-i18n="turnkey_badge">360° COMPLETE BUSINESS ARCHITECTURE</span>
+        </div>
+        <h2 class="section-title" data-i18n="turnkey_title">Have Any Business? We Handle Everything.</h2>
+        <p class="section-subtitle" data-i18n="turnkey_subtitle">
+          From iconic luxury company logos to custom websites, mobile apps, and automated marketing campaigns — whatever your industry, just inform us and HOUSE OF HYPE builds your complete digital empire from A to Z.
+        </p>
+      </div>
+
+      <!-- 4-Pillar Turnkey Process Banner -->
+      <div class="turnkey-process-grid reveal">
+        <div class="turnkey-step-card">
+          <span class="turnkey-step-num">Step 01</span>
+          <span class="turnkey-step-icon">💬</span>
+          <h4 data-i18n="step_1_title">You Just Inform Us</h4>
+          <p data-i18n="step_1_desc">Tell us your vision, existing business, or concept. We analyze your market, competitors, and growth objectives.</p>
+        </div>
+        <div class="turnkey-step-card">
+          <span class="turnkey-step-num">Step 02</span>
+          <span class="turnkey-step-icon">💎</span>
+          <h4 data-i18n="step_2_title">Iconic Logo & Branding</h4>
+          <p data-i18n="step_2_desc">We design your custom company logo, complete visual guidelines, typography, stationery, and brand identity.</p>
+        </div>
+        <div class="turnkey-step-card">
+          <span class="turnkey-step-num">Step 03</span>
+          <span class="turnkey-step-icon">⚡</span>
+          <h4 data-i18n="step_3_title">Turnkey Web & App</h4>
+          <p data-i18n="step_3_desc">We engineer high-speed responsive websites, e-commerce stores, and native mobile/web apps tailored to your customers.</p>
+        </div>
+        <div class="turnkey-step-card">
+          <span class="turnkey-step-num">Step 04</span>
+          <span class="turnkey-step-icon">🚀</span>
+          <h4 data-i18n="step_4_title">Launch, Ads & Full Care</h4>
+          <p data-i18n="step_4_desc">We launch high-converting Google & Meta ad campaigns, handle 24/7 technical management, updates, and cloud hosting.</p>
+        </div>
+      </div>
+
+      <!-- 2-Column Main Split: Logo & Branding Showcase VS Interactive Industry Solution Selector -->
+      <div class="turnkey-main-split">
+        <!-- Left: Branding & Logo Showcase Box -->
+        <div class="branding-showcase-box reveal reveal-delay-1">
+          <div class="branding-img-wrapper">
+            <img src="images/branding_showcase.jpg" alt="HOUSE OF HYPE Logo & Brand Identity Suite" loading="lazy">
+            <div class="branding-img-tag">
+              <span>✦</span> <span data-i18n="branding_badge">100% Bespoke Brand Guidelines & Vector Master Files</span>
+            </div>
+          </div>
+          <div class="branding-info-body">
+            <div>
+              <h3 data-i18n="branding_heading">Company Logos & Brand Identity Systems</h3>
+              <p data-i18n="branding_desc">
+                Your logo is the signature of your legacy. We craft prestigious, memorable logos and holistic brand systems designed to command instant authority across print, web, and mobile.
+              </p>
+              <div class="branding-checklist">
+                <div class="branding-check-item">
+                  <span class="branding-check-bullet">✓</span>
+                  <span data-i18n="check_logo">Custom Logos & Monograms</span>
+                </div>
+                <div class="branding-check-item">
+                  <span class="branding-check-bullet">✓</span>
+                  <span data-i18n="check_vector">Full Vector Formats (SVG, AI, PDF)</span>
+                </div>
+                <div class="branding-check-item">
+                  <span class="branding-check-bullet">✓</span>
+                  <span data-i18n="check_guidelines">Typography & Color Science</span>
+                </div>
+                <div class="branding-check-item">
+                  <span class="branding-check-bullet">✓</span>
+                  <span data-i18n="check_print">Luxury Cards & Social Kits</span>
+                </div>
+              </div>
+            </div>
+            <a href="#contact" class="btn-secondary" style="width:100%; text-align:center; justify-content:center; display:flex;">
+              <span data-i18n="cta_order_brand">Order Your Custom Logo & Brand</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Industry Solution Selector -->
+        <div class="industry-selector-box reveal reveal-delay-2">
+          <div class="industry-selector-header">
+            <h3 data-i18n="industry_heading">Whatever Your Business — We Build It</h3>
+            <p data-i18n="industry_desc">Click your industry below to preview your all-in-one digital package:</p>
+          </div>
+
+          <!-- Industry Pill Buttons -->
+          <div class="industry-pills-row" id="industryPills">
+            <button type="button" class="industry-pill active" data-industry="retail">🛍️ Retail & E-Commerce</button>
+            <button type="button" class="industry-pill" data-industry="consulting">💼 Consulting & Corporate</button>
+            <button type="button" class="industry-pill" data-industry="restaurant">🍽️ Restaurant & Café</button>
+            <button type="button" class="industry-pill" data-industry="luxury">👗 Fashion & Luxury</button>
+            <button type="button" class="industry-pill" data-industry="health">🏥 Health & Clinics</button>
+            <button type="button" class="industry-pill" data-industry="tech">🚀 Tech & Startups</button>
+          </div>
+
+          <!-- Dynamic Details Card -->
+          <div class="industry-dynamic-card" id="industryDynamicCard">
+            <div class="industry-card-title-row">
+              <h4 id="indCardTitle">E-Commerce & Retail Business</h4>
+              <span class="industry-badge" id="indCardBadge">Turnkey Solution</span>
+            </div>
+
+            <div class="industry-deliverables-list" id="indDeliverablesList">
+              <div class="deliverable-row">
+                <span class="deliverable-icon">💎</span>
+                <span class="deliverable-text" id="delLogo"><strong>Brand & Logo:</strong> Modern e-commerce logo, favicon & packaging design kit.</span>
+              </div>
+              <div class="deliverable-row">
+                <span class="deliverable-icon">🌐</span>
+                <span class="deliverable-text" id="delWeb"><strong>Online Store:</strong> Ultra-fast online store with seamless payment gateway & cart.</span>
+              </div>
+              <div class="deliverable-row">
+                <span class="deliverable-icon">📱</span>
+                <span class="deliverable-text" id="delApp"><strong>Customer App:</strong> iOS & Android shopping app with push notifications & live tracking.</span>
+              </div>
+              <div class="deliverable-row">
+                <span class="deliverable-icon">📈</span>
+                <span class="deliverable-text" id="delMarketing"><strong>Growth & Ads:</strong> High-ROI Meta & Google Ads campaigns to drive daily sales.</span>
+              </div>
+              <div class="deliverable-row">
+                <span class="deliverable-icon">🛡️</span>
+                <span class="deliverable-text" id="delCare"><strong>Full Management:</strong> Zero hassle. 24/7 technical hosting, inventory sync & maintenance.</span>
+              </div>
+            </div>
+
+            <a href="#contact" class="industry-cta-btn" id="indCtaBtn">
+              <span data-i18n="ind_btn_text">Launch This All-In-One Solution</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ============ WEBSITES SECTION ============ -->
   <section class="projects" id="projects">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label">Our Portfolio</div>
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">
-          A showcase of our finest work — delivering excellence across industries 
-          and platforms.
+        <div class="section-label" data-i18n="websites_label">Web Platforms & E-Commerce</div>
+        <h2 class="section-title" data-i18n="websites_title">Featured Websites</h2>
+        <p class="section-subtitle" data-i18n="websites_subtitle">
+          A showcase of our finest web platforms and e-commerce experiences — delivering prestige, extreme speed, and high conversion.
         </p>
       </div>
       <div class="projects-grid">
@@ -206,36 +782,38 @@
           <div class="project-image">
             <img src="images/project_glowyoriginal.png" alt="Glowy Original" loading="lazy">
             <div class="project-image-overlay">
-              <a href="https://glowyoriginal.com" target="_blank" class="project-view-btn" style="text-decoration:none; display:inline-block;">Visit Website</a>
+              <a href="https://glowyoriginal.com" target="_blank" class="project-view-btn"
+                style="text-decoration:none; display:inline-block;" data-i18n="visit_website">Visit Website</a>
             </div>
           </div>
           <div class="project-info">
-            <div class="project-category">Skincare & Beauty</div>
+            <div class="project-category" data-i18n="cat_skincare">Skincare & Beauty</div>
             <h3>Glowy Original</h3>
-            <p>Simply you, softly glowing. A beautiful e-commerce platform for skincare products.</p>
+            <p data-i18n="proj_glowy_desc">Simply you, softly glowing. A beautiful e-commerce platform for skincare products.</p>
             <div class="project-tags">
-              <span class="project-tag">E-Commerce</span>
-              <span class="project-tag">Design</span>
-              <span class="project-tag">Web Dev</span>
+              <span class="project-tag" data-i18n="tag_ecommerce">E-Commerce</span>
+              <span class="project-tag" data-i18n="tag_design">Design</span>
+              <span class="project-tag" data-i18n="tag_webdev">Web Dev</span>
             </div>
           </div>
         </div>
         <!-- Project 2 -->
         <div class="project-card reveal reveal-delay-2">
           <div class="project-image">
-            <img src="images/project_wheelworld.png" alt="Wheel World Consulting" loading="lazy">
+            <img src="images/project_wheelworld.png" alt="Wheel World Consulting — Website" loading="lazy">
             <div class="project-image-overlay">
-              <a href="https://wheelworld.dz" target="_blank" class="project-view-btn" style="text-decoration:none; display:inline-block;">Visit Website</a>
+              <a href="https://wheelworld.dz" target="_blank" class="project-view-btn"
+                style="text-decoration:none; display:inline-block;" data-i18n="visit_website">Visit Website</a>
             </div>
           </div>
           <div class="project-info">
-            <div class="project-category">Business Consulting</div>
-            <h3>Wheel World Consulting</h3>
-            <p>Expert business consulting firm providing strategic solutions and guidance.</p>
+            <div class="project-category" data-i18n="cat_consulting">Business Consulting</div>
+            <h3>Wheel World Consulting — Website</h3>
+            <p data-i18n="proj_wheel_website_desc">Elite business & economic consulting web platform offering strategic clarity, market insights, and expert reports.</p>
             <div class="project-tags">
-              <span class="project-tag">Corporate</span>
-              <span class="project-tag">Consulting</span>
-              <span class="project-tag">Web Dev</span>
+              <span class="project-tag" data-i18n="tag_corporate">Corporate</span>
+              <span class="project-tag" data-i18n="tag_consulting">Consulting</span>
+              <span class="project-tag" data-i18n="tag_webdev">Web Dev</span>
             </div>
           </div>
         </div>
@@ -244,17 +822,18 @@
           <div class="project-image">
             <img src="images/project_lmboutique.png" alt="LM Boutique" loading="lazy">
             <div class="project-image-overlay">
-              <a href="https://lmboutique.store" target="_blank" class="project-view-btn" style="text-decoration:none; display:inline-block;">Visit Website</a>
+              <a href="https://lmboutique.store" target="_blank" class="project-view-btn"
+                style="text-decoration:none; display:inline-block;" data-i18n="visit_website">Visit Website</a>
             </div>
           </div>
           <div class="project-info">
-            <div class="project-category">Fashion Boutique</div>
+            <div class="project-category" data-i18n="cat_fashion">Fashion Boutique</div>
             <h3>LM Boutique</h3>
-            <p>A fashion boutique for suit & dress rental based in Tlemcen, Algeria.</p>
+            <p data-i18n="proj_lm_desc">A fashion boutique for suit & dress rental based in Tlemcen, Algeria.</p>
             <div class="project-tags">
-              <span class="project-tag">Fashion</span>
-              <span class="project-tag">Rental</span>
-              <span class="project-tag">Web Dev</span>
+              <span class="project-tag" data-i18n="tag_fashion">Fashion</span>
+              <span class="project-tag" data-i18n="tag_rental">Rental</span>
+              <span class="project-tag" data-i18n="tag_webdev">Web Dev</span>
             </div>
           </div>
         </div>
@@ -263,17 +842,113 @@
           <div class="project-image">
             <img src="images/project_dnlumiere.png" alt="D&N Lumiere" loading="lazy">
             <div class="project-image-overlay">
-              <a href="https://dn-lumiere.com" target="_blank" class="project-view-btn" style="text-decoration:none; display:inline-block;">Visit Website</a>
+              <a href="https://dn-lumiere.com" target="_blank" class="project-view-btn"
+                style="text-decoration:none; display:inline-block;" data-i18n="visit_website">Visit Website</a>
             </div>
           </div>
           <div class="project-info">
-            <div class="project-category">Luxury Fashion</div>
+            <div class="project-category" data-i18n="cat_luxury">Luxury Fashion</div>
             <h3>D&N Lumiere</h3>
-            <p>Official shop for luxury fashion and accessories, offering a premium shopping experience.</p>
+            <p data-i18n="proj_dn_desc">Official shop for luxury fashion and accessories, offering a premium shopping experience.</p>
             <div class="project-tags">
-              <span class="project-tag">Luxury</span>
-              <span class="project-tag">E-Commerce</span>
-              <span class="project-tag">Web Dev</span>
+              <span class="project-tag" data-i18n="tag_luxury">Luxury</span>
+              <span class="project-tag" data-i18n="tag_ecommerce">E-Commerce</span>
+              <span class="project-tag" data-i18n="tag_webdev">Web Dev</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPLICATIONS SECTION ============ -->
+  <section class="applications" id="applications">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label" data-i18n="apps_label">Mobile & Web Apps</div>
+        <h2 class="section-title" data-i18n="apps_title">Flagship Applications</h2>
+        <p class="section-subtitle" data-i18n="apps_subtitle">
+          Native mobile applications, real-time analytics platforms, and enterprise cloud software engineered for scale and seamless user experiences.
+        </p>
+      </div>
+      <div class="applications-grid">
+        <!-- App 1 -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-image">
+            <img src="images/project_wheelworld_app.jpg" alt="Wheel World — Mobile App" loading="lazy">
+            <div class="project-image-overlay">
+              <a href="https://wheelworld.dz" target="_blank" class="project-view-btn"
+                style="text-decoration:none; display:inline-block;" data-i18n="explore_app">Explore App</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-category" data-i18n="cat_mobile_app">Mobile & Web App</div>
+            <h3>Wheel World — Mobile App</h3>
+            <p data-i18n="proj_wheel_app_desc">Cross-platform mobile application for real-time consultation booking, financial analytics, and economic indicators.</p>
+            <div class="project-tags">
+              <span class="project-tag" data-i18n="tag_mobile_app">Mobile App</span>
+              <span class="project-tag" data-i18n="tag_ios_android">iOS & Android</span>
+              <span class="project-tag" data-i18n="tag_fintech">FinTech</span>
+            </div>
+          </div>
+        </div>
+        <!-- App 2 -->
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-image">
+            <img src="images/project_mobile_app.jpg" alt="Finance Hub — Mobile App" loading="lazy">
+            <div class="project-image-overlay">
+              <a href="#contact" class="project-view-btn"
+                style="text-decoration:none; display:inline-block;" data-i18n="view_demo">View Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-category" data-i18n="cat_fintech">FinTech & Banking</div>
+            <h3>Finance Hub — Mobile App</h3>
+            <p data-i18n="proj_finance_desc">Modern mobile banking and portfolio management application with transaction analytics, budgeting tools, and biometric security.</p>
+            <div class="project-tags">
+              <span class="project-tag" data-i18n="tag_fintech">FinTech</span>
+              <span class="project-tag" data-i18n="tag_mobile_app">Mobile App</span>
+              <span class="project-tag" data-i18n="tag_ios_android">iOS & Android</span>
+            </div>
+          </div>
+        </div>
+        <!-- App 3 -->
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-image">
+            <img src="images/project_dashboard.jpg" alt="Nexus Enterprise — SaaS Platform" loading="lazy">
+            <div class="project-image-overlay">
+              <a href="#contact" class="project-view-btn"
+                style="text-decoration:none; display:inline-block;" data-i18n="launch_demo">Launch Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-category" data-i18n="cat_saas">Enterprise SaaS</div>
+            <h3>Nexus Enterprise — SaaS Platform</h3>
+            <p data-i18n="proj_nexus_desc">High-velocity enterprise analytics platform featuring multi-tenant metrics, customer activity heatmaps, and automation pipelines.</p>
+            <div class="project-tags">
+              <span class="project-tag" data-i18n="tag_saas">SaaS</span>
+              <span class="project-tag" data-i18n="tag_cloud">Cloud</span>
+              <span class="project-tag" data-i18n="tag_dashboard">Dashboard</span>
+            </div>
+          </div>
+        </div>
+        <!-- App 4 -->
+        <div class="project-card reveal reveal-delay-4">
+          <div class="project-image">
+            <img src="images/CODEV_digital_services_dashboard._202609072008.jpeg" alt="Digital Ops — Client Portal" loading="lazy">
+            <div class="project-image-overlay">
+              <a href="#contact" class="project-view-btn"
+                style="text-decoration:none; display:inline-block;" data-i18n="live_preview">Live Preview</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-category" data-i18n="cat_client_portal">Digital Operations</div>
+            <h3>Digital Ops — Client Portal</h3>
+            <p data-i18n="proj_ops_desc">All-in-one digital client portal and project management system with live milestone tracking and automated invoicing.</p>
+            <div class="project-tags">
+              <span class="project-tag" data-i18n="tag_webdev">Web App</span>
+              <span class="project-tag" data-i18n="tag_portal">Portal</span>
+              <span class="project-tag" data-i18n="tag_operations">Operations</span>
             </div>
           </div>
         </div>
@@ -286,33 +961,33 @@
     <div class="container">
       <div class="contact-info">
         <div class="reveal">
-          <div class="section-label">Get In Touch</div>
-          <h2 class="section-title">Let's Build Something Amazing</h2>
-          <p class="section-subtitle">
-            Ready to turn your idea into reality? Reach out and let's discuss 
-            how CODEV can help bring your vision to life.
+          <div class="section-label" data-i18n="contact_label">Get In Touch</div>
+          <h2 class="section-title" data-i18n="contact_title">Let's Build Something Amazing</h2>
+          <p class="section-subtitle" data-i18n="contact_subtitle">
+            Ready to turn your idea into reality? Reach out and let's discuss
+            how HOUSE OF HYPE can help bring your vision to life.
           </p>
         </div>
         <div class="contact-details reveal reveal-delay-1">
           <div class="contact-item">
             <div class="contact-item-icon">📧</div>
             <div class="contact-item-text">
-              <h4>Email Us</h4>
-              <p>contact@codev.com</p>
+              <h4 data-i18n="contact_email">Email Us</h4>
+              <p>contact@houseofhype.com</p>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon">📞</div>
             <div class="contact-item-text">
-              <h4>Call Us</h4>
+              <h4 data-i18n="contact_phone">Call Us</h4>
               <p>+1 (555) 123-4567</p>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon">📍</div>
             <div class="contact-item-text">
-              <h4>Visit Us</h4>
-              <p>123 Innovation Street, Tech City</p>
+              <h4 data-i18n="contact_visit">Visit Us</h4>
+              <p data-i18n="contact_address">123 Innovation Street, Tech City</p>
             </div>
           </div>
         </div>
@@ -327,45 +1002,165 @@
         <form class="contact-form" id="contactForm">
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="John Doe" required>
+              <label for="name" data-i18n="form_name">Your Name</label>
+              <input type="text" id="name" name="name" data-i18n-placeholder="form_name_ph" placeholder="John Doe" required>
             </div>
             <div class="form-group">
-              <label for="email">Your Email</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+              <label for="email" data-i18n="form_email">Your Email</label>
+              <input type="email" id="email" name="email" data-i18n-placeholder="form_email_ph" placeholder="john@example.com" required>
+            </div>
+          </div>
+          <!-- Service Selection Chips -->
+          <div class="form-group">
+            <label data-i18n="form_service_label">What Does Your Business Need?</label>
+            <div class="service-chips-row" id="serviceChipsRow">
+              <span class="service-chip active" data-service="360° All-In-One (Logo + Web + App + Ads)">👑 360° All-In-One Solution</span>
+              <span class="service-chip" data-service="Company Logo & Branding">💎 Company Logo & Branding</span>
+              <span class="service-chip" data-service="Custom Website / E-Commerce">🌐 Website / E-Commerce</span>
+              <span class="service-chip" data-service="Mobile & Web Application">📱 Mobile / Web App</span>
+              <span class="service-chip" data-service="Marketing & Ads Campaigns">📈 Marketing & Ads</span>
             </div>
           </div>
           <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Project Discussion">
+            <label for="subject" data-i18n="form_subject">Subject</label>
+            <input type="text" id="subject" name="subject" data-i18n-placeholder="form_subject_ph" placeholder="Project Discussion" value="360° All-In-One Business Solution">
           </div>
           <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+            <label for="message" data-i18n="form_message">Your Message</label>
+            <textarea id="message" name="message" data-i18n-placeholder="form_message_ph" placeholder="Tell us about your business or concept..." required></textarea>
           </div>
           <button type="submit" class="btn-submit" id="submitBtn">
-            Send Message
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            <span data-i18n="form_send">Send Message</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+            </svg>
           </button>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- ============ FOOTER ============ -->
-  <footer class="footer">
+  <!-- ============ WORLD-CLASS LUXURY FOOTER ============ -->
+  <footer class="footer" id="mainFooter">
+    <div class="footer-ambient-glow"></div>
+
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <img src="images/codev.jpeg" alt="CODEV Logo" class="footer-logo-img">
-          <span>CODEV</span>
+      <!-- Luxury Brand & Fast Access Strip -->
+      <div class="footer-top-strip">
+        <div class="footer-brand-lockup">
+          <img src="images/hoh_logo.jpg" alt="HOUSE OF HYPE Logo" class="footer-logo-img">
+          <div class="footer-brand-info">
+            <span class="footer-brand-name">HOUSE OF HYPE</span>
+            <span class="footer-brand-tagline">Venture Engineering & Digital Studio</span>
+          </div>
         </div>
-        <p class="footer-text">&copy; 2026 CODEV. All rights reserved. Built with passion.</p>
-        <ul class="footer-links">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+
+        <div class="footer-actions-hub">
+          <a href="https://wa.me/213554947690" target="_blank" rel="noopener" class="footer-action-whatsapp">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+            <span>WhatsApp Direct</span>
+          </a>
+          <a href="mailto:contact@houseofhype.dz" class="footer-action-email">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <span>contact@houseofhype.dz</span>
+          </a>
+          <div class="footer-social-strip">
+            <a href="#" class="footer-social-btn" aria-label="Instagram" title="Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="footer-social-btn" aria-label="LinkedIn" title="LinkedIn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer-social-btn" aria-label="GitHub" title="GitHub">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main 4-Column Balanced Grid -->
+      <div class="footer-main-grid">
+        <!-- Column 1: Studio Profile -->
+        <div class="footer-col footer-col-profile">
+          <h4 class="footer-col-title" data-i18n="footer_title_about">Studio</h4>
+          <p class="footer-brand-bio" data-i18n="footer_brand_bio">
+            Premium software development and creative digital studio. We build high-impact web applications, bespoke digital architectures, and conversion-focused systems.
+          </p>
+          <div class="footer-status-pill">
+            <span class="status-live-dot"></span>
+            <span data-i18n="footer_status">Available for select projects</span>
+          </div>
+        </div>
+
+        <!-- Column 2: 360° Solutions -->
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-i18n="footer_title_solutions">Solutions</h4>
+          <ul class="footer-col-links">
+            <li><a href="#all-in-one"><span data-i18n="footer_lnk_turnkey">360° Business Architecture</span></a></li>
+            <li><a href="#services"><span data-i18n="footer_lnk_logo">Logo & Brand Identity</span></a></li>
+            <li><a href="#projects"><span data-i18n="footer_lnk_web">Web Platforms & E-Commerce</span></a></li>
+            <li><a href="#applications"><span data-i18n="footer_lnk_apps">Native iOS & Android Apps</span></a></li>
+            <li><a href="#services"><span data-i18n="footer_lnk_ads">Google & Meta Ad Growth</span></a></li>
+            <li><a href="#all-in-one"><span data-i18n="footer_lnk_hosting">Cloud Hosting & 24/7 Care</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Featured Portfolio -->
+        <div class="footer-col">
+          <h4 class="footer-col-title" data-i18n="footer_title_portfolio">Selected Work</h4>
+          <ul class="footer-col-links">
+            <li><a href="https://wheelworld.dz" target="_blank" rel="noopener">Wheel World — Platform</a></li>
+            <li><a href="#applications">Wheel World — Mobile App</a></li>
+            <li><a href="https://glowyoriginal.com" target="_blank" rel="noopener">Glowy Original Store</a></li>
+            <li><a href="https://dn-lumiere.com" target="_blank" rel="noopener">D&N Lumière Luxury</a></li>
+            <li><a href="https://lmboutique.store" target="_blank" rel="noopener">LM Boutique Fashion</a></li>
+            <li><a href="#all-in-one">Bespoke Brand Identities</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Concierge & Direct Contact -->
+        <div class="footer-col footer-col-contact">
+          <h4 class="footer-col-title" data-i18n="footer_title_contact">Contact</h4>
+          <div class="footer-contact-minimal">
+            <div class="f-contact-line">
+              <span class="f-line-label">Inquiries</span>
+              <a href="mailto:contact@houseofhype.dz" class="f-line-value">contact@houseofhype.dz</a>
+            </div>
+            <div class="f-contact-line">
+              <span class="f-line-label">WhatsApp</span>
+              <a href="https://wa.me/213554947690" target="_blank" class="f-line-value">+213 554 94 76 90</a>
+            </div>
+            <div class="f-contact-line">
+              <span class="f-line-label">Headquarters</span>
+              <span class="f-line-value">Algiers, Algeria</span>
+            </div>
+            <div class="f-contact-line">
+              <span class="f-line-label">Response Time</span>
+              <span class="f-line-badge">Under 2 hours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Legal Bar -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copyright">
+          <span>&copy; 2026 HOUSE OF HYPE. All rights reserved.</span>
+        </div>
+
+        <ul class="footer-bottom-links">
+          <li><a href="#hero" data-i18n="nav_home">Home</a></li>
+          <li><a href="#services" data-i18n="nav_services">Services</a></li>
+          <li><a href="#all-in-one" data-i18n="nav_all_in_one">360° Solution</a></li>
+          <li><a href="#projects" data-i18n="nav_websites">Websites</a></li>
+          <li><a href="#applications" data-i18n="nav_applications">Applications</a></li>
+          <li><a href="#contact" data-i18n="footer_contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -373,9 +1168,13 @@
 
   <!-- Back to Top -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
   </button>
 
   <script src="script.js"></script>
 </body>
+
 </html>

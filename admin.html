@@ -1,88 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CODEV Admin Dashboard</title>
-  
+  <title>HOUSE OF HYPE Admin Dashboard</title>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- Arabic Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
   <!-- CSS -->
   <link rel="stylesheet" href="admin-styles.css">
-  
+
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="sidebar-header">
       <div class="logo">
-        <svg class="lightning-icon premium-star" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="var(--gold-light)">
-          <path d="M12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0Z"/>
-        </svg> 
-        <span>CODEV</span>
+        <img src="images/hoh_logo.jpg" alt="HOUSE OF HYPE Logo"
+          style="width: 34px; height: 34px; border-radius: 8px; object-fit: cover;">
+        <span>HOUSE OF HYPE</span>
       </div>
     </div>
-    
+
     <nav class="sidebar-nav">
       <ul>
-        <li class="active"><a href="#dashboard">Dashboard</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#messages">Messages</a></li>
-        <li><a href="#analytics">Analytics</a></li>
-        <li><a href="#settings">Settings</a></li>
+        <li class="active"><a href="#dashboard" data-i18n="nav_dashboard">Dashboard</a></li>
+        <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="#messages" data-i18n="nav_messages">Messages</a></li>
+        <li><a href="#analytics" data-i18n="nav_analytics">Analytics</a></li>
+        <li><a href="#settings" data-i18n="nav_settings">Settings</a></li>
       </ul>
     </nav>
-    
+
     <div class="sidebar-footer">
-      <a href="index.html" class="back-link">← Back to Site</a>
+      <a href="index.html" class="back-link" data-i18n="back_to_site">← Back to Site</a>
     </div>
   </aside>
 
   <!-- Main Content -->
   <main class="main-content">
-    
+
     <!-- Topbar -->
     <header class="topbar">
       <div class="search-bar">
-        <input type="text" placeholder="Search anything...">
+        <input type="text" data-i18n-placeholder="search_placeholder" placeholder="Search anything...">
       </div>
       <div class="user-profile">
+        <!-- Language Switcher -->
+        <div class="lang-switcher" id="lang-switcher">
+          <button class="lang-btn" id="lang-btn">
+            <span class="lang-flag" id="lang-flag">🇬🇧</span>
+            <span class="lang-code" id="lang-code">EN</span>
+            <span class="lang-arrow">▾</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <div class="lang-option" data-lang="en">
+              <span class="lang-flag">🇬🇧</span>
+              <span>English</span>
+            </div>
+            <div class="lang-option" data-lang="fr">
+              <span class="lang-flag">🇫🇷</span>
+              <span>Français</span>
+            </div>
+            <div class="lang-option" data-lang="ar">
+              <span class="lang-flag">🇩🇿</span>
+              <span>العربية</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-toggle-icon moon">🌙</span>
+          <span class="theme-toggle-icon sun">☀️</span>
+        </button>
         <div class="notification-bell active">🔔</div>
-        <div class="avatar">
-          <img src="https://ui-avatars.com/api/?name=Admin&background=0D1B2A&color=D4AF37" alt="Admin">
+        <div class="avatar" title="Founder & Admin">
+          <img src="images/my-photo.jpg.jpeg" alt="Founder & Admin">
         </div>
       </div>
     </header>
 
     <!-- Dashboard Content -->
     <div id="dashboard" class="tab-content active">
-      <h1 class="page-title">Overview</h1>
-      
+      <h1 class="page-title" data-i18n="overview">Overview</h1>
+
       <!-- Stats Cards -->
       <section class="stats-grid">
         <div class="stat-card">
-          <div class="stat-title">Total Visitors</div>
+          <div class="stat-title" data-i18n="total_visitors">Total Visitors</div>
           <div class="stat-value">124,592</div>
           <div class="stat-trend positive">+14.5%</div>
         </div>
         <div class="stat-card">
-          <div class="stat-title">New Messages</div>
+          <div class="stat-title" data-i18n="new_messages">New Messages</div>
           <div class="stat-value">48</div>
           <div class="stat-trend positive">+5.2%</div>
         </div>
         <div class="stat-card">
-          <div class="stat-title">Active Projects</div>
+          <div class="stat-title" data-i18n="active_projects">Active Projects</div>
           <div class="stat-value">12</div>
           <div class="stat-trend neutral">0%</div>
         </div>
         <div class="stat-card">
-          <div class="stat-title">Revenue</div>
+          <div class="stat-title" data-i18n="revenue">Revenue</div>
           <div class="stat-value">$45,230</div>
           <div class="stat-trend positive">+22.4%</div>
         </div>
@@ -91,77 +123,108 @@
       <!-- Charts & Tables -->
       <section class="dashboard-lower">
         <div class="recent-messages">
-          <h2>Recent Inquiries</h2>
+          <h2 data-i18n="recent_inquiries">Recent Inquiries</h2>
           <table>
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Service</th>
-                <th>Date</th>
-                <th>Status</th>
+                <th data-i18n="th_name">Name</th>
+                <th data-i18n="th_service">Service</th>
+                <th data-i18n="th_date">Date</th>
+                <th data-i18n="th_status">Status</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>John Doe</td>
-                <td>Web Development</td>
-                <td>Today</td>
-                <td><span class="status new">New</span></td>
+                <td data-i18n="service_webdev">Web Development</td>
+                <td data-i18n="date_today">Today</td>
+                <td><span class="status new" data-i18n="status_new">New</span></td>
               </tr>
               <tr>
                 <td>Sarah Smith</td>
-                <td>Logo Design</td>
-                <td>Yesterday</td>
-                <td><span class="status pending">Pending</span></td>
+                <td data-i18n="service_logo">Logo Design</td>
+                <td data-i18n="date_yesterday">Yesterday</td>
+                <td><span class="status pending" data-i18n="status_pending">Pending</span></td>
               </tr>
               <tr>
                 <td>Mike Johnson</td>
-                <td>Marketing</td>
+                <td data-i18n="service_marketing">Marketing</td>
                 <td>Oct 12</td>
-                <td><span class="status completed">Replied</span></td>
+                <td><span class="status completed" data-i18n="status_replied">Replied</span></td>
               </tr>
               <tr>
                 <td>Emma Wilson</td>
-                <td>Mobile App</td>
+                <td data-i18n="service_mobile">Mobile App</td>
                 <td>Oct 10</td>
-                <td><span class="status completed">Replied</span></td>
+                <td><span class="status completed" data-i18n="status_replied">Replied</span></td>
               </tr>
             </tbody>
           </table>
         </div>
-        
+
         <div class="quick-actions">
-          <h2>Quick Actions</h2>
-          <button class="action-btn" id="add-project-btn">Add New Project</button>
-          <button class="action-btn" id="update-services-btn">Update Services</button>
-          <button class="action-btn">Generate Report</button>
+          <h2 data-i18n="quick_actions">Quick Actions</h2>
+          <button class="action-btn" id="add-project-btn" data-i18n="add_project">Add New Project</button>
+          <button class="action-btn" id="update-services-btn" data-i18n="update_services">Update Services</button>
+          <button class="action-btn" data-i18n="generate_report">Generate Report</button>
         </div>
       </section>
     </div>
 
     <!-- Projects View -->
     <div id="projects" class="tab-content">
-      <h1 class="page-title">Manage Projects</h1>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+        <h1 class="page-title" data-i18n="manage_projects" style="margin:0;">Manage Projects</h1>
+        <button class="action-btn" id="add-project-btn-tab" style="width:auto; padding:0.6rem 1.2rem;" data-i18n="add_project">+ Add Project</button>
+      </div>
       <div class="projects-grid-admin">
         <div class="admin-project-card">
-          <img src="images/CODEV_website_concept_wheelworld_consulting_luxury_202609072010.jpeg" alt="Wheelworld">
+          <img src="images/project_glowyoriginal.png" alt="Glowy Original">
           <div class="project-info">
-            <h3>Wheelworld.dz</h3>
-            <p>Business Consulting</p>
+            <h3>Glowy Original</h3>
+            <p data-i18n="cat_skincare">Skincare & Beauty</p>
             <div class="project-actions">
-              <button class="btn-edit">Edit</button>
-              <button class="btn-delete">Delete</button>
+              <button class="btn-delete" data-i18n="btn_delete">Delete</button>
             </div>
           </div>
         </div>
         <div class="admin-project-card">
-          <img src="images/CODEV_website_concept_ecommerce_fashion_boutique_lmboutique_202609072010.jpeg" alt="LM Boutique">
+          <img src="images/project_wheelworld.png" alt="Wheel World Consulting — Website">
+          <div class="project-info">
+            <h3>Wheel World Consulting — Website</h3>
+            <p data-i18n="cat_consulting">Business Consulting</p>
+            <div class="project-actions">
+              <button class="btn-delete" data-i18n="btn_delete">Delete</button>
+            </div>
+          </div>
+        </div>
+        <div class="admin-project-card">
+          <img src="images/project_wheelworld_app.jpg" alt="Wheel World — Mobile App">
+          <div class="project-info">
+            <h3>Wheel World — Mobile App</h3>
+            <p data-i18n="cat_mobile_app">Mobile & Web App</p>
+            <div class="project-actions">
+              <button class="btn-delete" data-i18n="btn_delete">Delete</button>
+            </div>
+          </div>
+        </div>
+        <div class="admin-project-card">
+          <img src="images/project_lmboutique.png" alt="LM Boutique">
           <div class="project-info">
             <h3>LM Boutique</h3>
-            <p>Fashion Store</p>
+            <p data-i18n="cat_fashion">Fashion Store</p>
             <div class="project-actions">
-              <button class="btn-edit">Edit</button>
-              <button class="btn-delete">Delete</button>
+              <button class="btn-delete" data-i18n="btn_delete">Delete</button>
+            </div>
+          </div>
+        </div>
+        <div class="admin-project-card">
+          <img src="images/project_dnlumiere.png" alt="D&N Lumiere">
+          <div class="project-info">
+            <h3>D&N Lumiere</h3>
+            <p data-i18n="cat_luxury">Luxury Fashion</p>
+            <div class="project-actions">
+              <button class="btn-delete" data-i18n="btn_delete">Delete</button>
             </div>
           </div>
         </div>
@@ -170,34 +233,37 @@
 
     <!-- Messages View -->
     <div id="messages" class="tab-content">
-      <h1 class="page-title">Inbox</h1>
+      <h1 class="page-title" data-i18n="inbox">Inbox</h1>
       <div class="inbox-container">
         <div class="inbox-list">
           <div class="inbox-item unread">
             <h4>John Doe</h4>
-            <span>Web Development Inquiry</span>
-            <small>Today, 10:30 AM</small>
+            <span data-i18n="msg_webdev_inquiry">Web Development Inquiry</span>
+            <small data-i18n="msg_time_today">Today, 10:30 AM</small>
           </div>
           <div class="inbox-item">
             <h4>Sarah Smith</h4>
-            <span>Logo Design Project</span>
-            <small>Yesterday, 2:15 PM</small>
+            <span data-i18n="msg_logo_project">Logo Design Project</span>
+            <small data-i18n="msg_time_yesterday">Yesterday, 2:15 PM</small>
           </div>
         </div>
         <div class="inbox-view">
-          <h3>Message from John Doe</h3>
-          <p><strong>Email:</strong> john@example.com</p>
-          <p><strong>Service:</strong> Web Development</p>
+          <h3 data-i18n="msg_from_john">Message from John Doe</h3>
+          <p><strong data-i18n="label_email">Email:</strong> john@example.com</p>
+          <p><strong data-i18n="label_service">Service:</strong> <span data-i18n="service_webdev">Web Development</span>
+          </p>
           <hr style="border: 1px solid rgba(255,255,255,0.05); margin: 20px 0;">
-          <p>"Hi, I need a luxury website built for my real estate agency. Please let me know your availability."</p>
-          <button class="action-btn" style="margin-top: 20px; width: auto;">Reply to Message</button>
+          <p data-i18n="msg_body">"Hi, I need a luxury website built for my real estate agency. Please let me know your
+            availability."</p>
+          <button class="action-btn" style="margin-top: 20px; width: auto;" data-i18n="reply_message">Reply to
+            Message</button>
         </div>
       </div>
     </div>
 
     <!-- Analytics View -->
     <div id="analytics" class="tab-content">
-      <h1 class="page-title">Analytics Dashboard</h1>
+      <h1 class="page-title" data-i18n="analytics_dashboard">Analytics Dashboard</h1>
       <div class="chart-container">
         <canvas id="trafficChart"></canvas>
       </div>
@@ -209,21 +275,22 @@
   <div id="project-modal" class="modal">
     <div class="modal-content">
       <span class="close-modal">&times;</span>
-      <h2>Add New Project</h2>
+      <h2 data-i18n="add_project">Add New Project</h2>
       <form id="project-form">
         <div class="form-group">
-          <label>Project Title</label>
-          <input type="text" id="project-title" placeholder="e.g. My New Website">
+          <label data-i18n="label_project_title">Project Title</label>
+          <input type="text" id="project-title" data-i18n-placeholder="ph_project_title"
+            placeholder="e.g. My New Website">
         </div>
         <div class="form-group">
-          <label>Category</label>
-          <input type="text" id="project-category" placeholder="e.g. E-Commerce">
+          <label data-i18n="label_category">Category</label>
+          <input type="text" id="project-category" data-i18n-placeholder="ph_category" placeholder="e.g. E-Commerce">
         </div>
         <div class="form-group">
-          <label>Image URL</label>
+          <label data-i18n="label_image_url">Image URL</label>
           <input type="text" id="project-image" placeholder="images/your-image.jpg">
         </div>
-        <button type="button" class="action-btn" id="save-project">Save Project</button>
+        <button type="button" class="action-btn" id="save-project" data-i18n="save_project">Save Project</button>
       </form>
     </div>
   </div>
@@ -231,21 +298,24 @@
   <div id="service-modal" class="modal">
     <div class="modal-content">
       <span class="close-modal" id="close-service-modal">&times;</span>
-      <h2>Add New Service</h2>
+      <h2 data-i18n="add_service">Add New Service</h2>
       <form id="service-form">
         <div class="form-group">
-          <label>Service Title</label>
-          <input type="text" id="service-title" placeholder="e.g. SEO Optimization">
+          <label data-i18n="label_service_title">Service Title</label>
+          <input type="text" id="service-title" data-i18n-placeholder="ph_service_title"
+            placeholder="e.g. SEO Optimization">
         </div>
         <div class="form-group">
-          <label>Description</label>
-          <input type="text" id="service-desc" placeholder="Brief description of the service">
+          <label data-i18n="label_description">Description</label>
+          <input type="text" id="service-desc" data-i18n-placeholder="ph_description"
+            placeholder="Brief description of the service">
         </div>
-        <button type="button" class="action-btn" id="save-service">Save Service</button>
+        <button type="button" class="action-btn" id="save-service" data-i18n="save_service">Save Service</button>
       </form>
     </div>
   </div>
 
   <script src="admin.js"></script>
 </body>
+
 </html>

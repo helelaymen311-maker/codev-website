@@ -158,7 +158,93 @@ body {
 .user-profile {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
+}
+
+/* Language Switcher */
+.lang-switcher {
+  position: relative;
+  z-index: 100;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
+}
+
+.lang-arrow {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+  color: var(--gold);
+}
+
+.lang-switcher.open .lang-arrow {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 140px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+  z-index: 110;
+}
+
+.lang-switcher.open .lang-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-option:hover {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--text-primary);
+}
+
+.lang-option.active {
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--gold);
+  font-weight: 600;
 }
 
 .notification-bell {
@@ -184,6 +270,14 @@ body {
   height: 40px;
   border-radius: 50%;
   border: 2px solid var(--gold);
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.6);
 }
 
 /* Dashboard Content */
