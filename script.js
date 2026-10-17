@@ -498,18 +498,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
 
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navLinks.classList.toggle('open');
-  });
-
-  // Close mobile menu on link click
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('active');
-      navLinks.classList.remove('open');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('open');
     });
-  });
+
+    // Close mobile menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('open');
+      }
+    });
+  }
 
   // ==========================================
   // SCROLL REVEAL & STAGGER ANIMATIONS
@@ -550,6 +561,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3D TILT EFFECT & RADIAL GLOW ON CARDS
   // ==========================================
   function initTiltEffects() {
+    if (window.innerWidth <= 768 || ('ontouchstart' in window)) return;
     const cards = document.querySelectorAll('[data-tilt], .service-card, .project-card, .app-card, .founder-card');
 
     cards.forEach(card => {

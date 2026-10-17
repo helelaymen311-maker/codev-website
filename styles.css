@@ -3402,6 +3402,12 @@ a.f-line-value:hover {
   transition: transform 0.1s ease-out;
 }
 
+@media (max-width: 768px), (pointer: coarse) {
+  .cursor-glow {
+    display: none !important;
+  }
+}
+
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
@@ -3451,82 +3457,430 @@ a.f-line-value:hover {
 
 @media (max-width: 768px) {
   :root {
-    --section-padding: 80px 0;
+    --section-padding: 55px 0;
+  }
+
+  html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .container {
+    padding: 0 18px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* --- Navbar Mobile Polish --- */
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .nav-logo {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    gap: 8px;
+  }
+
+  .nav-logo-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .nav-right-controls {
+    gap: 7px;
+  }
+
+  .site-lang-btn {
+    padding: 5px 8px;
+    font-size: 0.76rem;
+    gap: 4px;
+    border-radius: 8px;
+  }
+
+  .site-theme-toggle {
+    width: 32px;
+    height: 32px;
+    font-size: 0.88rem;
+    border-radius: 8px;
+  }
+
+  .nav-toggle {
+    display: flex;
+    padding: 5px;
+  }
+
+  .nav-toggle span {
+    width: 20px;
+    height: 2px;
   }
 
   .nav-links {
     position: fixed;
     top: 0;
     right: 0;
-    width: 280px;
+    width: 260px;
+    max-width: 82vw;
     height: 100vh;
-    background: rgba(5, 10, 24, 0.95);
-    backdrop-filter: blur(20px);
+    height: 100dvh;
+    background: rgba(4, 8, 20, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     flex-direction: column;
     justify-content: center;
     gap: 8px;
-    padding: 20px;
+    padding: 24px 18px;
     transform: translateX(100%);
-    transition: var(--transition-smooth);
-    border-left: 1px solid var(--glass-border);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    border-left: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: -10px 0 35px rgba(0, 0, 0, 0.7);
+    z-index: 9999;
   }
 
   .nav-links.open {
     transform: translateX(0);
   }
 
-  .nav-toggle {
+  [dir="rtl"] .nav-links {
+    right: auto;
+    left: 0;
+    border-left: none;
+    border-right: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 10px 0 35px rgba(0, 0, 0, 0.7);
+    transform: translateX(-100%);
+  }
+
+  [dir="rtl"] .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  /* --- Hero Mobile Polish --- */
+  .hero {
+    padding: 85px 0 45px;
+    min-height: auto;
+  }
+
+  .hero .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-badge {
+    margin-bottom: 16px;
+    font-size: 0.74rem;
+    padding: 6px 14px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8.5vw, 2.6rem);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-description {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+
+  .hero-buttons {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    justify-content: center;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  .projects-grid,
-  .applications-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-    margin: 0 auto;
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: 0.92rem;
+    border-radius: 12px;
   }
 
   .hero-stats {
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .stat {
     text-align: center;
   }
 
-  .form-row {
-    grid-template-columns: 1fr;
+  .stat-number {
+    font-size: 1.45rem;
   }
 
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
+  .stat-label {
+    font-size: 0.68rem;
+    line-height: 1.25;
+  }
+
+  .hero-visual {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    margin-top: 10px;
   }
 
   .hero-image-wrapper {
-    max-width: 300px;
+    max-width: 320px;
+    width: 100%;
+    animation: none;
+    transform: none !important;
+  }
+
+  .hero-image-badge {
+    font-size: 0.72rem;
+    padding: 7px 14px;
+    white-space: nowrap;
+    bottom: -12px;
+  }
+
+  /* --- Section Header Polish --- */
+  .section-label {
+    font-size: 0.76rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: clamp(1.6rem, 5.5vw, 2.1rem);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .section-subtitle {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  /* --- Flagship iPhone Showcase Mobile --- */
+  .iphone-flagship-wrapper {
+    padding: 24px 14px;
+    border-radius: 20px;
+    max-width: 100%;
+  }
+
+  .iphone-flagship-title {
+    font-size: 1.35rem;
+  }
+
+  .iphone-device-chassis {
+    width: min(280px, calc(100vw - 44px));
+    height: 520px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  }
+
+  .screen-main-img {
+    height: 140px;
+  }
+
+  /* --- Turnkey Process & Architecture Mobile --- */
+  .turnkey-process-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .turnkey-main-split {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .branding-showcase-box,
+  .industry-selector-box {
+    padding: 18px 14px;
+    border-radius: 18px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .branding-img-wrapper {
+    height: 175px;
+    border-radius: 14px;
+  }
+
+  .branding-info-body {
+    padding: 16px 2px 2px;
+  }
+
+  .branding-info-body h3 {
+    font-size: 1.15rem;
+  }
+
+  .branding-checklist {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .industry-pills-row {
+    gap: 6px;
+  }
+
+  .industry-pill {
+    padding: 6px 10px;
+    font-size: 0.74rem;
+  }
+
+  /* --- Grids (Services, Projects, Apps) Mobile --- */
+  .services-grid,
+  .projects-grid,
+  .applications-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .service-card,
+  .project-card,
+  .application-card {
+    padding: 18px 14px 22px;
+    border-radius: 18px;
+    max-width: 100%;
+    box-sizing: border-box;
+    transform: none !important;
+  }
+
+  .service-card-media,
+  .project-card-media,
+  .app-card-media {
+    height: 165px;
+    border-radius: 14px;
+  }
+
+  /* --- Founder Card Mobile --- */
+  .founder-card {
+    grid-template-columns: 1fr;
+    padding: 24px 14px;
+    gap: 22px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .founder-image-frame {
+    max-width: 240px;
+    height: 290px;
+    margin: 0 auto;
+    border-radius: 16px;
+  }
+
+  .founder-experience-badge {
+    padding: 6px 10px;
+    gap: 8px;
+  }
+
+  .founder-badge-text strong {
+    font-size: 0.82rem;
+  }
+
+  .founder-badge-text span {
+    font-size: 0.68rem;
+  }
+
+  .founder-info h3 {
+    font-size: 1.35rem;
+  }
+
+  .founder-bio {
+    font-size: 0.85rem;
+  }
+
+  .founder-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .founder-actions {
+    justify-content: center;
+  }
+
+  /* --- Contact Section & Form Mobile --- */
+  .contact .container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .contact-form-wrapper {
+    padding: 20px 14px;
+    border-radius: 18px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* 16px font-size prevents iOS Safari auto-zoom bug! */
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 16px !important;
+    padding: 12px 14px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 0.92rem;
+  }
+
+  /* --- Back To Top Mobile --- */
+  .back-to-top {
+    bottom: 16px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2.2rem;
+    font-size: clamp(1.85rem, 8vw, 2.3rem);
   }
 
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.65rem;
   }
 
-  .contact-form-wrapper {
-    padding: 24px;
+  .stat-number {
+    font-size: 1.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
   }
 }
 
