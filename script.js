@@ -625,11 +625,35 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.disabled = true;
     submitBtn.style.opacity = '0.7';
 
-    // Simulate sending
+    // Save message to admin storage
+    try {
+      const name = document.getElementById('name')?.value || '';
+      const email = document.getElementById('email')?.value || '';
+      const subject = document.getElementById('subject')?.value || 'Project Inquiry';
+      const message = document.getElementById('message')?.value || '';
+      const activeChip = document.querySelector('.service-chip.active')?.textContent?.trim() || 'General';
+
+      const existingMessages = JSON.parse(localStorage.getItem('codev_messages')) || [];
+      const newMsg = {
+        id: Date.now(),
+        name: name,
+        email: email,
+        service: activeChip,
+        date: new Date().toISOString().split('T')[0],
+        message: message,
+        status: 'new'
+      };
+      existingMessages.unshift(newMsg);
+      localStorage.setItem('codev_messages', JSON.stringify(existingMessages));
+    } catch (err) {
+      console.warn('Storage sync:', err);
+    }
+
+    // Simulate sending & confirm
     setTimeout(() => {
       submitBtn.innerHTML = `
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-        Message Sent!
+        Message Received!
       `;
       submitBtn.style.background = 'linear-gradient(135deg, #059669, #047857)';
       submitBtn.style.opacity = '1';
@@ -640,7 +664,7 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.disabled = false;
         contactForm.reset();
       }, 2500);
-    }, 1500);
+    }, 1200);
   });
 
   // ==========================================
@@ -879,9 +903,9 @@ document.addEventListener('DOMContentLoaded', () => {
       contact_title: "Let's Build Something Amazing",
       contact_subtitle: "Ready to turn your idea into reality? Reach out and let's discuss how HOUSE OF HYPE can help bring your vision to life.",
       contact_email: "Email Us",
-      contact_phone: "Call Us",
-      contact_visit: "Visit Us",
-      contact_address: "123 Innovation Street, Tech City",
+      contact_phone: "WhatsApp & Call",
+      contact_visit: "Headquarters",
+      contact_address: "Constantine, Ali Mendjeli, Algeria",
       form_name: "Your Name",
       form_name_ph: "John Doe",
       form_email: "Your Email",
@@ -1055,9 +1079,9 @@ document.addEventListener('DOMContentLoaded', () => {
       contact_title: "Construisons Quelque Chose d'Incroyable",
       contact_subtitle: "Prêt à donner vie à votre idée ? Contactez-nous pour discuter de la manière dont HOUSE OF HYPE peut vous aider.",
       contact_email: "Écrivez-nous",
-      contact_phone: "Appelez-nous",
-      contact_visit: "Rendez-nous Visite",
-      contact_address: "123 Rue de l'Innovation, Tech City",
+      contact_phone: "WhatsApp & Appel",
+      contact_visit: "Siège Social",
+      contact_address: "Constantine, Ali Mendjeli, Algérie",
       form_name: "Votre Nom",
       form_name_ph: "Jean Dupont",
       form_email: "Votre Email",
@@ -1231,9 +1255,9 @@ document.addEventListener('DOMContentLoaded', () => {
       contact_title: "لنبني شيئًا مذهلاً معًا",
       contact_subtitle: "جاهز لتحويل فكرتك إلى حقيقة؟ تواصل معنا ودعنا نناقش كيف يمكن لـ HOUSE OF HYPE مساعدتك في ذلك.",
       contact_email: "راسلنا",
-      contact_phone: "اتصل بنا",
-      contact_visit: "قم بزيارتنا",
-      contact_address: "123 شارع الابتكار، مدينة التكنولوجيا",
+      contact_phone: "واتساب واتصال",
+      contact_visit: "المقر الرئيسي",
+      contact_address: "قسنطينة، علي منجلي، الجزائر",
       form_name: "اسمك",
       form_name_ph: "محمد أحمد",
       form_email: "بريدك الإلكتروني",
